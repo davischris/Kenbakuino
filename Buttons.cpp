@@ -14,6 +14,8 @@ void Buttons::Init()
   pinMode(PIN_BTN_PL, OUTPUT);
   pinMode(PIN_BTN_CP, OUTPUT); 
   pinMode(PIN_BTN_Q7, INPUT);
+  // lock switch - CLD
+  pinMode(PIN_LOCK, INPUT);
   // set no prev state
   m_wPrevState = 0xFFFF;
   m_wPrevReading = 0xFFFF;
@@ -112,4 +114,3 @@ bool Buttons::GetButtonDown(word BtnState, int& Btn)
 
 
 Buttons buttons = Buttons();
-
