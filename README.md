@@ -31,7 +31,7 @@ SYSX extensions to copy RAM to/from EEPROM. See memcopy.txt
 By request, a couple of 24-hour mode versions of the BCD clock (STOP+Bit3). See 24hourBCDclocks.txt
 
 **Feb '21**
-Created new repository with some minor changes for Kenbak-1 kit from adwaterandstir.com
+Created new repository with some minor changes specific to Kenbak-1 kit from adwaterandstir.com
 
 Schematic (taken from PINS.H)
 ````
