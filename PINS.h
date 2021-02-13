@@ -13,14 +13,14 @@
 
 // 74HC165 - Switch driver
 #define PIN_BTN_Q7	A0
-#define PIN_BTN_CP	13
-#define PIN_BTN_PL	12
+#define PIN_BTN_CP	13  //(PB5)
+#define PIN_BTN_PL	12  //(PB4)
 
 // LEDS - direct connection
 #define PIN_LED_INP	A1
 #define PIN_LED_ADDR	A2
 #define	PIN_LED_MEM	A3
-#define PIN_LED_RUN_PWM	11
+#define PIN_LED_RUN_PWM	11  //(PWM11)
 
 /*********************************************************
 This is a *SCHEMATIC*
@@ -40,9 +40,9 @@ Component list:
   <USB>---[TX]---+TX         | 
   <USB>---[RX]---+RX         |        +-----------+
                  |           |        |    595    |
-      [XTAL1]----+XT1      10+--------+SH(11)   Q0+----<LED0 "Bit0">
-      [XTAL2]----+XT2       9+--------+ST(12)   Q1+----<LED1 "Bit1">
-                 |          8+--------+DS(14)   Q2+----<LED2 "Bit2">
+      [XTAL1]----+XT1 (16)D10+--------+SH(11)   Q0+----<LED0 "Bit0">
+      [XTAL2]----+XT2  (15)D9+--------+ST(12)   Q1+----<LED1 "Bit1">
+                 |     (14)D8+--------+DS(14)   Q2+----<LED2 "Bit2">
                  |           |  [+5V]-+Vcc(16)  Q3+----<LED3 "Bit3">
                  |           |  [GND]-+Gnd(8)   Q4+----<LED4 "Bit4">
                  |           |  [+5V]-+MR(10)   Q5+----<LED5 "Bit5">
@@ -52,9 +52,9 @@ Component list:
 +------+         |           |
 | RTC  |         |           |             +-----------+
 |   SDA+---------+A4         |             |   165-1   |    **Note the order!**
-|   SCL+---------+A5       A0+-------------+Q7(9)    D0+----<SW0 "Bit0">
-|   Vcc+-[+5V]   |         13+-----+-------+CP(2)    D1+----<SW1 "Bit1">
-|   Gnd+-[GND]   |         12+--+  |       |         D2+----<SW2 "Bit6">
+|   SCL+---------+A5   (23)A0+-------------+Q7(9)    D0+----<SW0 "Bit0">
+|   Vcc+-[+5V]   |    (19)D13+-----+-------+CP(2)    D1+----<SW1 "Bit1">
+|   Gnd+-[GND]   |    (18)D12+--+  |       |         D2+----<SW2 "Bit6">
 +------+         +-----------+  +--|-------+PL(1)    D3+----<SW3 "Bit7">
                                 |  | [GND]-+Gnd(8)   D4+----<SW4 "Bit4">
                                 |  | [GND]-+CE(15)   D5+----<SW5 "Bit5">
@@ -91,4 +91,3 @@ You are free to change this to match the physical arrangement of the buttons,
 BUT you will need to also change Buttons::m_pMap[] to match.
 *********************************************************/
 #endif
-
